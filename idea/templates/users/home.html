@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="static/style3.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo"><img src="{% static 'img/logo.png' %}"></div>
+      <div class="buttons">
+        {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}" class="dude"><input type="button" value="Logout"></a>
+                    <a href="{% url 'username' %}" class="'dude"><input type="button" value="Nickname entry here👌😊"></a>
+        {% else %}
+                    <a href="{% url 'login' %}"><input type="button" value="Login"></a>
+                    <a href="{% url 'register' %}"><input type="button" value="Sign Up"></a>
+        {% endif %}
+      </div>
+    </nav>
+    <div class="text-content">
+      {% if user.is_authenticated %}
+      <h2>Hi, {{user.username.title}}</h2><hr>
+      <h2>Learn To Enjoy,<br>Every Moment Of Your Life</h2>
+      <p><h4>It is all about us to be happy and to face everything in our life
+         <b>together</b> and instead of poiting out that it is your fault we 
+         used to work on that how to get rid of everything</h4></p>
+      {% else %}
+      <h2>Welcome</h2>
+      <p><h4>This is a basic project came from a silly idea<br>
+        Trying to improve this webpage<br><hr><hr>
+        </h4><h2>Thank You</h2></p>
+      {% endif %}
+
+    </div>
+  </header>
+
+</body>
+</html>

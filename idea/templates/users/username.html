@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="static/style2.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<section>
+  <div class="form-box">
+    <div class="form-value">
+        <form method="POST" action="">
+            {% csrf_token %}
+            <h2>Name</h2>
+            <div class="inputbox">
+                <input type="text" name="first_name" required>
+                <label for="">First Name</label>
+            </div>
+            <div class="inputbox">
+                <input type="text" name="last_name" required>
+                <label for="">Last Name</label>
+            </div>
+            <button type="submit" value="submit">Submit</button>
+        </form>
+    </div>
+  </div>
+</section>
+<!-- partial -->
+  <script src='https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js'></script>
+<script src='https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js'></script>
+</body>
+</html>
